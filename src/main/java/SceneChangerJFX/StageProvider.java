@@ -1,3 +1,5 @@
+package SceneChanger;
+
 import java.util.HashMap;
 
 public class StageProvider {
@@ -10,9 +12,9 @@ public class StageProvider {
      * </p>
      *
      * @param stageName
-     * defines what the StageManager should be called, this name is used as a unique identifier
+     * defines what the SceneChanger.StageManager should be called, this name is used as a unique identifier
      * @return
-     * returns the wanted StageManager, if a StageManager exists with the same name,
+     * returns the wanted SceneChanger.StageManager, if a SceneChanger.StageManager exists with the same name,
      * then the existing instance will be returned, else a new instance gets created
      */
     public static StageManager getStageManager(String stageName){
@@ -28,7 +30,7 @@ public class StageProvider {
     }
 
     /**
-     * closes the stage within the requested StageManager and then removes the Stagemanager
+     * closes the stage within the requested SceneChanger.StageManager and then removes the Stagemanager
      *
      * @param stageName
      * unique identifier to distinguish between StageManagers
@@ -44,12 +46,12 @@ public class StageProvider {
     }
 
     /**
-     * deletes the old StageManager and then creates a new one instead
+     * deletes the old SceneChanger.StageManager and then creates a new one instead
      *
      * @param stageName
      * unique identifier to distinguish between StageManagers
      * @return
-     * returns the fresh StageManager
+     * returns the fresh SceneChanger.StageManager
      */
     public static StageManager resetStageManager(String stageName){
 

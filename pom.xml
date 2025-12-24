@@ -4,9 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>htl.steyr</groupId>
+    <groupId>com.github.ykolo-glu</groupId>
     <artifactId>SceneChangerJFX</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>SceneChangerJFX</name>
+    <description>JavaFX Stage and Scene management library</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -27,5 +32,50 @@
             <version>21.0.1</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+            <!-- Sources JAR erstellen -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- JavaDoc JAR erstellen -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Warnungen nicht als Fehler behandeln -->
+                    <doclint>none</doclint>
+                    <source>21</source>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

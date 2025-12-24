@@ -1,3 +1,5 @@
+package SceneChanger;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -8,7 +10,7 @@ public class StageManager {
     private SceneManager sceneManager;
 
     /**
-     * the constructor makes a Stage instance for stage and makes a SceneManager instance for sceneManager
+     * the constructor makes a Stage instance for stage and makes a SceneChanger.SceneManager instance for sceneManager
      */
     public StageManager(){
 
@@ -51,7 +53,7 @@ public class StageManager {
 
     /**
      * @return
-     * returns the current SceneManager
+     * returns the current SceneChanger.SceneManager
      */
     public SceneManager getSceneManager() {
         return sceneManager;
@@ -59,7 +61,7 @@ public class StageManager {
 
     /**
      * @param sceneManager
-     * SceneManager that replaces the current SceneManager
+     * SceneChanger.SceneManager that replaces the current SceneChanger.SceneManager
      */
     public void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;

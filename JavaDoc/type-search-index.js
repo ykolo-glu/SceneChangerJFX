@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"SceneChanger","l":"SceneManager"},{"p":"SceneChanger","l":"StageManager"},{"p":"SceneChanger","l":"StageProvider"}];updateSearchResults();
