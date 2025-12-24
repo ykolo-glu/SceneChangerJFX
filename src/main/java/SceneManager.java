@@ -37,7 +37,7 @@ public class SceneManager {
      *     if the user chooses not to save the old Scene in cache, the old Scene will be removed from cache
      * </p>
      *
-     * @param filePath
+     * @param filepath
      * defines which fxml document should be loaded
      * @param cacheLastUsedScene
      * defines if the previous Scene should be cached or not
@@ -48,27 +48,27 @@ public class SceneManager {
      * @throws IOException
      * throws an error if the wanted fxml document cannot be found
      */
-    public Scene loadScene(String filePath, boolean cacheLastUsedScene, boolean useCachedScene) throws IOException {
+    public Scene loadScene(String filepath, boolean cacheLastUsedScene, boolean useCachedScene) throws IOException {
 
         Scene scene = null;
 
         boolean cachedSceneNotFound = false;
         if(useCachedScene){
-            scene = getSceneFromFilepath(filePath);
+            scene = getSceneFromFilepath(filepath);
             if(scene == null){
                 cachedSceneNotFound = true;
             }
         }
         if(!useCachedScene || cachedSceneNotFound){
-            getScenes().remove(filePath);
+            getScenes().remove(filepath);
 
             URL fxml = Thread.currentThread()
                     .getContextClassLoader()
-                    .getResource(filePath + ".fxml");
+                    .getResource(filepath + ".fxml");
 
             if (fxml == null) {
                 throw new IllegalArgumentException(
-                        "FXML not found: " + filePath + ".fxml"
+                        "FXML not found: " + filepath + ".fxml"
                 );
             }
 
@@ -77,12 +77,12 @@ public class SceneManager {
             scene = new Scene(loader.load());
         }
 
-        getScenes().put(filePath, scene);
+        getScenes().put(filepath, scene);
         if(getLastUsedFilepath() != null && !getLastUsedFilepath().isEmpty() && !cacheLastUsedScene){
             getScenes().remove(getLastUsedFilepath());
         }
 
-        setLastUsedFilepath(filePath);
+        setLastUsedFilepath(filepath);
 
         return scene;
     }
