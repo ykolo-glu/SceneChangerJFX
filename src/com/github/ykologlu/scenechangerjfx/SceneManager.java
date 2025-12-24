@@ -10,6 +10,7 @@ import java.util.HashMap;
 public class SceneManager {
     private HashMap<String, Scene> scenes;
     private String lastUsedFilepath;
+    private Class<?> resourceClass;
 
     /**
      * the constructor makes a HashMap instance for scenes
@@ -18,6 +19,15 @@ public class SceneManager {
     public SceneManager(){
         setLastUsedFilepath("");
         setScenes(new HashMap<>());
+        this.resourceClass = null;
+    }
+
+    /**
+     * Set the class to use for loading resources.
+     * This should be a class from the application using the library.
+     */
+    public void setResourceClass(Class<?> resourceClass) {
+        this.resourceClass = resourceClass;
     }
 
     /**
@@ -64,10 +74,21 @@ public class SceneManager {
         if(!useCachedScene || cachedSceneNotFound){
             getScenes().remove(filepath);
 
-            URL fxml = Thread.currentThread()
-                    .getContextClassLoader()
-                    .getResource(filepath + ".fxml");
+            URL fxml = null;
 
+            // Versuche zuerst mit der gesetzten resourceClass
+            if (resourceClass != null) {
+                fxml = resourceClass.getResource("/" + filepath + ".fxml");
+            }
+
+            // Fallback: Thread Context ClassLoader
+            if (fxml == null) {
+                fxml = Thread.currentThread()
+                        .getContextClassLoader()
+                        .getResource(filepath + ".fxml");
+            }
+
+            // Fallback: SceneManager's ClassLoader
             if (fxml == null) {
                 fxml = SceneManager.class.getResource("/" + filepath + ".fxml");
             }
