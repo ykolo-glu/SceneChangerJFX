@@ -9,11 +9,45 @@ public class SceneManager {
     private HashMap<String, Scene> scenes;
     private String lastUsedFilepath;
 
+    /**
+     * the constructor makes a HashMap instance for scenes
+     * and sets the last used filepath to an empty value
+     */
     public SceneManager(){
         setLastUsedFilepath("");
         setScenes(new HashMap<>());
     }
 
+    /**
+     * <p>
+     *     loadScene is used to create a Scene using a fxml document of the users choosing.
+     *     the fxml document has to be inside the resources file in a JavaFX project.
+     * </p>
+     * <p>
+     *     if the user wants to use a cached Scene, the Scene that bears the same filepath as
+     *     the one the user wants will be returned,
+     *     unless there is no Scene that is stored in the cache with the same filepath, in which case a new Scene
+     *     will be loaded with the desired fxml document.
+     * </p>
+     * <p>
+     *     if the user does not want to use a cached Scene, all Scenes that use the same filepath will be deleted from cache
+     *     and a new Scene will be loaded with the desired fxml document
+     * </p>
+     * <p>
+     *     if the user chooses not to save the old Scene in cache, the old Scene will be removed from cache
+     * </p>
+     *
+     * @param filePath
+     * defines which fxml document should be loaded
+     * @param cacheLastUsedScene
+     * defines if the previous Scene should be cached or not
+     * @param useCachedScene
+     * defines if the current Scene should be fetched from the cache or not
+     * @return
+     * returns the wanted Scene
+     * @throws IOException
+     * throws an error if the wanted fxml document cannot be found
+     */
     public Scene loadScene(String filePath, boolean cacheLastUsedScene, boolean useCachedScene) throws IOException {
 
         Scene scene = null;
@@ -53,21 +87,36 @@ public class SceneManager {
         return scene;
     }
 
-    public void setScenes(HashMap<String, Scene> scenes) {
-        this.scenes = scenes;
-    }
-    public HashMap<String, Scene> getScenes() {
-        return this.scenes;
-    }
-
     public Scene getSceneFromFilepath(String filepath){
         return getScenes().get(filepath);
     }
 
+    /**
+     * @param scenes
+     * Hashmap that replaces the current scenes Hashmap
+     */
+    public void setScenes(HashMap<String, Scene> scenes) {
+        this.scenes = scenes;
+    }
+
+    /**
+     * @return returns the current scenes Hashmap
+     */
+    public HashMap<String, Scene> getScenes() {
+        return this.scenes;
+    }
+
+    /**
+     * @return returns the last used filepath
+     */
     public String getLastUsedFilepath() {
         return lastUsedFilepath;
     }
 
+    /**
+     * @param lastUsedFilepath
+     * String that replaces the last used filepath
+     */
     public void setLastUsedFilepath(String lastUsedFilepath) {
         this.lastUsedFilepath = lastUsedFilepath;
     }
