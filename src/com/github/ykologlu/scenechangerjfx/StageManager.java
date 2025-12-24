@@ -1,4 +1,4 @@
-package SceneChanger;
+package com.github.ykologlu.scenechangerjfx;
 
 import javafx.stage.Stage;
 
@@ -10,7 +10,7 @@ public class StageManager {
     private SceneManager sceneManager;
 
     /**
-     * the constructor makes a Stage instance for stage and makes a SceneChanger.SceneManager instance for sceneManager
+     * the constructor makes a Stage instance for stage and makes a com.github.ykologlu.scenechangerjfx.SceneManager instance for sceneManager
      */
     public StageManager(){
 
@@ -53,7 +53,7 @@ public class StageManager {
 
     /**
      * @return
-     * returns the current SceneChanger.SceneManager
+     * returns the current com.github.ykologlu.scenechangerjfx.SceneManager
      */
     public SceneManager getSceneManager() {
         return sceneManager;
@@ -61,7 +61,7 @@ public class StageManager {
 
     /**
      * @param sceneManager
-     * SceneChanger.SceneManager that replaces the current SceneChanger.SceneManager
+     * com.github.ykologlu.scenechangerjfx.SceneManager that replaces the current com.github.ykologlu.scenechangerjfx.SceneManager
      */
     public void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;

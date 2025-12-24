@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"SceneChanger","l":"SceneManager"},{"p":"SceneChanger","l":"StageManager"},{"p":"SceneChanger","l":"StageProvider"}];updateSearchResults();
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"com.github.ykologlu.scenechangerjfx","l":"SceneManager"},{"p":"com.github.ykologlu.scenechangerjfx","l":"StageManager"},{"p":"com.github.ykologlu.scenechangerjfx","l":"StageProvider"}];updateSearchResults();

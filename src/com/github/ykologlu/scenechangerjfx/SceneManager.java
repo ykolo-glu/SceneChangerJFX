@@ -1,4 +1,4 @@
-package SceneChanger;
+package com.github.ykologlu.scenechangerjfx;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
