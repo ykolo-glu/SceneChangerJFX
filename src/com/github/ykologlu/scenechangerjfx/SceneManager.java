@@ -69,13 +69,16 @@ public class SceneManager {
                     .getResource(filepath + ".fxml");
 
             if (fxml == null) {
+                fxml = SceneManager.class.getResource("/" + filepath + ".fxml");
+            }
+
+            if (fxml == null) {
                 throw new IllegalArgumentException(
                         "FXML not found: " + filepath + ".fxml"
                 );
             }
 
             FXMLLoader loader = new FXMLLoader(fxml);
-
             scene = new Scene(loader.load());
         }
 
