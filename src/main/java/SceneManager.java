@@ -87,6 +87,12 @@ public class SceneManager {
         return scene;
     }
 
+    /**
+     * @param filepath
+     * filepath of the fxml of the requested Scene
+     * @return
+     * returns the requested Scene from the list. returns null if not fouund
+     */
     public Scene getSceneFromFilepath(String filepath){
         return getScenes().get(filepath);
     }
