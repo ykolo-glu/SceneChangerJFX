@@ -11,7 +11,7 @@ public class SceneManager {
 
     public SceneManager(){
         setLastUsedFilepath("");
-        setScenes(new HashMap<String, Scene>());
+        setScenes(new HashMap<>());
     }
 
     public Scene loadScene(String filePath, boolean cacheLastUsedScene, boolean useCachedScene) throws IOException {
@@ -44,9 +44,11 @@ public class SceneManager {
         }
 
         getScenes().put(filePath, scene);
-        if(!getLastUsedFilepath().isEmpty() && getLastUsedFilepath() != null && !cacheLastUsedScene){
+        if(getLastUsedFilepath() != null && !getLastUsedFilepath().isEmpty() && !cacheLastUsedScene){
             getScenes().remove(getLastUsedFilepath());
         }
+
+        setLastUsedFilepath(filePath);
 
         return scene;
     }
