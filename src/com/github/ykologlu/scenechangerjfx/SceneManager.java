@@ -78,6 +78,7 @@ public class SceneManager {
 
             if(resourceClass != null){
 
+                System.out.println(resourceClass.getClass());
                 String path = resourceClass.getPackageName();
                 System.out.println(resourceClass.getResource("/" + path.replace('.', '/') + "/" + filepath + ".fxml"));
 
