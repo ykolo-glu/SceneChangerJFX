@@ -78,7 +78,6 @@ public class SceneManager {
 
             if(resourceClass != null){
 
-                System.out.println(resourceClass.getClass());
                 String path = resourceClass.getPackageName();
                 System.out.println(resourceClass.getResource("/" + path.replace('.', '/') + "/" + filepath + ".fxml"));
 
@@ -86,12 +85,12 @@ public class SceneManager {
                 String fullPath = "src/main/resources/" + path.replace('.', '/') + "/" + filepath + ".fxml";
                 System.out.println("DEBUG - Full Path: " + fullPath);
                 fxml = resourceClass.getResource(fullPath);
-                System.out.println("DEBUG - Method 2 (absolute): " + (fxml != null));
+                System.out.println("DEBUG - Method 2 (absolute): " + fxml);
             }
 
             if (fxml == null) {
                 fxml = resourceClass.getResource("/" + filepath + ".fxml");
-                System.out.println("DEBUG - : " + resourceClass.getResource("/" + filepath + ".fxml"));
+                System.out.println("DEBUG - : " + fxml);
             }
 
             if (fxml == null) {
