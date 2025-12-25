@@ -80,7 +80,7 @@ public class SceneManager {
 
                 String path = resourceClass.getPackageName().replace('.', '/');
                 System.out.println("DEBUG - : " + path);
-                fxml = resourceClass.getResource("/" + path + "/" + filepath + ".fxml");
+                fxml = resourceClass.getResource("/htl/steyr/scenechangerjfxtest/" + filepath + ".fxml");
                 System.out.println("DEBUG - : " + fxml);
             }
 
