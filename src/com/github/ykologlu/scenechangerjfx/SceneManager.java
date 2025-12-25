@@ -79,6 +79,7 @@ public class SceneManager {
             if(resourceClass != null){
 
                 String path = resourceClass.getPackageName().replace('.', '/');
+                System.out.println("DEBUG - : " + path);
                 fxml = resourceClass.getResource("/" + path + "/" + filepath + ".fxml");
                 System.out.println("DEBUG - : " + fxml);
             }
