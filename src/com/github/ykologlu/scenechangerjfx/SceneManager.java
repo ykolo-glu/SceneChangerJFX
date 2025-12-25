@@ -78,12 +78,13 @@ public class SceneManager {
 
             if(resourceClass != null){
 
-                fxml = resourceClass.getResource("/htl/steyr/scenechangerjfxtest/hello-view.fxml");
+                String filePathWithClassPath = resourceClass.getPackage().getName().replace(".", "/") + "/" + filepath;
+                fxml = fxmlHelper(filePathWithClassPath);
                 System.out.println(fxml);
             }
 
             if (fxml == null) {
-                fxml = resourceClass.getResource("/" + filepath + ".fxml");
+                fxml = fxmlHelper(filepath);
                 System.out.println("DEBUG - : " + fxml);
             }
 
@@ -115,6 +116,10 @@ public class SceneManager {
         setLastUsedFilepath(filepath);
 
         return scene;
+    }
+
+    public URL fxmlHelper(String filepath){
+        return resourceClass.getResource("/" + filepath + ".fxml");
     }
 
     /**
