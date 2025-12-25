@@ -84,7 +84,7 @@ public class SceneManager {
                 if (fxml == null) {
                     // Versuche mit Package-Pfad
                     String path = resourceClass.getPackageName();
-                    String fullPath = "/" + path.replace('.', '/') + "/" + filepath + ".fxml";
+                    String fullPath = "src/main/resources/" + path.replace('.', '/') + "/" + filepath + ".fxml";
                     System.out.println("DEBUG - Full Path: " + fullPath);
                     fxml = resourceClass.getResource(fullPath);
                     System.out.println("DEBUG - Method 2 (absolute): " + (fxml != null));
