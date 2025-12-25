@@ -78,6 +78,11 @@ public class SceneManager {
 
             if(resourceClass != null){
 
+                System.out.println("RESOLVING: /"
+                        + resourceClass.getPackage().getName().replace(".", "/")
+                        + "/" + filepath + ".fxml");
+
+
                 String filePathWithClassPath = resourceClass.getPackage().getName().replace(".", "/") + "/" + filepath;
                 fxml = fxmlHelper(filePathWithClassPath);
                 System.out.println(fxml);
