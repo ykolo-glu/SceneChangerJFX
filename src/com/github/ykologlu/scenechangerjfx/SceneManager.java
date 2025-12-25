@@ -76,19 +76,25 @@ public class SceneManager {
 
             URL fxml = null;
 
-            // Versuche zuerst mit der gesetzten resourceClass
-            if (resourceClass != null) {
+            if(resourceClass != null){
+                String path = resourceClass.getPackageName();
+                String fullPath = path.isEmpty()
+                        ? "/" + filepath + ".fxml"
+                        : "/" + path.replace('.', '/') + "/" + filepath + ".fxml";
+
+                fxml = resourceClass.getResource(fullPath);
+            }
+
+            if (fxml == null) {
                 fxml = resourceClass.getResource("/" + filepath + ".fxml");
             }
 
-            // Fallback: Thread Context ClassLoader
             if (fxml == null) {
                 fxml = Thread.currentThread()
                         .getContextClassLoader()
                         .getResource(filepath + ".fxml");
             }
 
-            // Fallback: SceneManager's ClassLoader
             if (fxml == null) {
                 fxml = SceneManager.class.getResource("/" + filepath + ".fxml");
             }

@@ -10,7 +10,7 @@ public class StageManager {
     private SceneManager sceneManager;
 
     /**
-     * the constructor makes a Stage instance for stage and makes a com.github.ykologlu.scenechangerjfx.SceneManager instance for sceneManager
+     * the constructor makes a Stage instance for stage and makes a SceneManager instance for sceneManager
      */
     public StageManager(){
 
@@ -53,7 +53,7 @@ public class StageManager {
 
     /**
      * @return
-     * returns the current com.github.ykologlu.scenechangerjfx.SceneManager
+     * returns the current SceneManager
      */
     public SceneManager getSceneManager() {
         return sceneManager;
@@ -61,7 +61,7 @@ public class StageManager {
 
     /**
      * @param sceneManager
-     * com.github.ykologlu.scenechangerjfx.SceneManager that replaces the current com.github.ykologlu.scenechangerjfx.SceneManager
+     * SceneManager that replaces the current SceneManager
      */
     public void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
