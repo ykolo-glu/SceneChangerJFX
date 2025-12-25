@@ -78,10 +78,8 @@ public class SceneManager {
 
             if(resourceClass != null){
 
-                String path = resourceClass.getPackageName().replace('.', '/');
-                System.out.println("DEBUG - : " + path);
-                fxml = resourceClass.getResource("/htl/steyr/scenechangerjfxtest/" + filepath + ".fxml");
-                System.out.println("DEBUG - : " + fxml);
+                fxml = resourceClass.getResource("/htl/steyr/scenechangerjfxtest/hello-view.fxml");
+                System.out.println(fxml);
             }
 
             if (fxml == null) {
