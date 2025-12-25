@@ -84,12 +84,12 @@ public class SceneManager {
 
 
                 String filePathWithClassPath = resourceClass.getPackage().getName().replace(".", "/") + "/" + filepath;
-                fxml = fxmlHelper(filePathWithClassPath);
+                fxml = resolveFXML(filePathWithClassPath);
                 System.out.println(fxml);
             }
 
             if (fxml == null) {
-                fxml = fxmlHelper(filepath);
+                fxml = resolveFXML(filepath);
                 System.out.println("DEBUG - : " + fxml);
             }
 
@@ -123,9 +123,23 @@ public class SceneManager {
         return scene;
     }
 
-    public URL fxmlHelper(String filepath){
-        return resourceClass.getResource("/" + filepath + ".fxml");
+    private URL resolveFXML(String filepath) {
+        if (resourceClass == null) {
+            throw new IllegalStateException("resourceClass not set");
+        }
+
+        // RELATIV zum Package der resourceClass
+        URL url = resourceClass.getResource(filepath + ".fxml");
+
+        if (url == null) {
+            throw new IllegalArgumentException(
+                    "FXML not found: " + filepath + ".fxml"
+            );
+        }
+
+        return url;
     }
+
 
     /**
      * @param filepath
