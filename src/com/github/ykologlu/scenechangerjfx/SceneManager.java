@@ -88,10 +88,10 @@ public class SceneManager {
 //                System.out.println(fxml);
 //            }
 
-//            if (fxml == null) {
-//                fxml = fxmlHelper(filepath);
-//                System.out.println("DEBUG - : " + fxml);
-//            }
+            if (fxml == null) {
+                fxml = fxmlHelper(filepath);
+                System.out.println("DEBUG - : " + fxml);
+            }
 
             if (fxml == null) {
                 fxml = Thread.currentThread()
@@ -124,7 +124,12 @@ public class SceneManager {
     }
 
     public URL fxmlHelper(String filepath){
-        return resourceClass.getResource("/" + filepath + ".fxml");
+        URL result = resourceClass.getResource("/" + filepath + ".fxml");
+        System.out.println("Searching for: /" + filepath + ".fxml");
+        System.out.println("Result: " + result);
+        System.out.println("ResourceClass: " + resourceClass.getName());
+        System.out.println("ResourceClass package: " + resourceClass.getPackage().getName());
+        return result;
     }
 
     /**
