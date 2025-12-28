@@ -88,10 +88,10 @@ public class SceneManager {
 //                System.out.println(fxml);
 //            }
 
-            if (fxml == null) {
-                fxml = fxmlHelper(filepath);
-                System.out.println("DEBUG - : " + fxml);
-            }
+//            if (fxml == null) {
+//                fxml = fxmlHelper(filepath);
+//                System.out.println("DEBUG - : " + fxml);
+//            }
 
             if (fxml == null) {
                 fxml = Thread.currentThread()
