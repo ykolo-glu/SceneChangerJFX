@@ -49,6 +49,15 @@ public class SceneManager {
      *     if the user chooses not to save the old Scene in cache, the old Scene will be removed from cache
      * </p>
      *
+     * <p>
+     *     additionally, the function initially checks if the fxml file resides within a directory
+     *     that has the same name as the class, meaning that the user can search for the fxml directly
+     *     (example: "group/projectname/view.fmxl" can be searched with "view")
+     * </p>
+     *
+     * <p>
+     *     User needs to open the directory the .fxml file resides in to the library within module-info.java
+     * </p>
      * @param filepath
      * defines which fxml document should be loaded
      * @param cacheLastUsedScene
@@ -76,21 +85,14 @@ public class SceneManager {
 
             URL fxml = null;
 
-//            if(resourceClass != null){
-//
-//                System.out.println("RESOLVING: /"
-//                        + resourceClass.getPackage().getName().replace(".", "/")
-//                        + "/" + filepath + ".fxml");
-//
-//
-//                String filePathWithClassPath = resourceClass.getPackage().getName().replace(".", "/") + "/" + filepath;
-//                fxml = fxmlHelper(filePathWithClassPath);
-//                System.out.println(fxml);
-//            }
+            if(resourceClass != null){
+
+                String filePathWithClassPath = resourceClass.getPackage().getName().replace(".", "/") + "/" + filepath;
+                fxml = fxmlHelper(filePathWithClassPath);
+            }
 
             if (fxml == null) {
                 fxml = fxmlHelper(filepath);
-                System.out.println("DEBUG - : " + fxml);
             }
 
             if (fxml == null) {
@@ -123,12 +125,15 @@ public class SceneManager {
         return scene;
     }
 
+    /**
+     * Helper class for function loadScene
+     * @param filepath
+     * defines which fxml document should be loaded
+     * @return
+     * returns the URL of the fxml document
+     */
     public URL fxmlHelper(String filepath){
         URL result = resourceClass.getResource("/" + filepath + ".fxml");
-        System.out.println("Searching for: /" + filepath + ".fxml");
-        System.out.println("Result: " + result);
-        System.out.println("ResourceClass: " + resourceClass.getName());
-        System.out.println("ResourceClass package: " + resourceClass.getPackage().getName());
         return result;
     }
 

@@ -7,7 +7,7 @@
     <groupId>com.github.ykolo-glu</groupId>
     <artifactId>SceneChangerJFX</artifactId>
 
-    <version>1.0.24</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>SceneChangerJFX</name>
