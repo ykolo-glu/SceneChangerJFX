@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.ykologlu.scenechangerjfx.DebugController">
+   <children>
+      <Text layoutX="72.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available StageManagers" />
+      <Text layoutX="369.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available Scenes in StageManager" />
+      <ListView fx:id="stageManagerListView" layoutX="-2.0" layoutY="31.0" onMouseClicked="#LoadScenesOfStage" prefHeight="469.0" prefWidth="282.0" />
+      <ListView fx:id="sceneListView" layoutX="318.0" layoutY="31.0" prefHeight="469.0" prefWidth="282.0" />
+   </children>
+</AnchorPane>

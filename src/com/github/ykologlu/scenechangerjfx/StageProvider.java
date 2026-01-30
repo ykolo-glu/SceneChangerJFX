@@ -70,5 +70,7 @@ public class StageProvider {
         return stageManagerInstances.get(stageName);
     }
 
-
+    public static HashMap<String, StageManager> getStageManagerInstances() {
+        return stageManagerInstances;
+    }
 }
