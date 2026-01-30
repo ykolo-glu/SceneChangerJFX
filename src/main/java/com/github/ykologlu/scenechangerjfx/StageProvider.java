@@ -1,6 +1,7 @@
 package com.github.ykologlu.scenechangerjfx;
 
 import com.github.ykologlu.scenechangerjfx.StageManager;
+import com.github.ykologlu.scenechangerjfx.DebugStageManager;
 
 import java.util.HashMap;
 
@@ -21,7 +22,7 @@ public class StageProvider {
      */
     public static StageManager getStageManager(String stageName){
 
-        System.out.println("Hello test 1");
+        System.out.println("Hello test 2");
 
         StageManager stageManager = getStageFromName(stageName);
         if(stageManager != null){
