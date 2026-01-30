@@ -1,6 +1,7 @@
-package main.java.com.github.ykologlu.scenechangerjfx;
+package com.github.ykologlu.scenechangerjfx;
 
 import javafx.stage.Stage;
+import com.github.ykologlu.scenechangerjfx.SceneManager;
 
 import java.io.IOException;
 

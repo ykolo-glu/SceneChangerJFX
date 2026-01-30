@@ -1,4 +1,6 @@
-package main.java.com.github.ykologlu.scenechangerjfx;
+package com.github.ykologlu.scenechangerjfx;
+
+import com.github.ykologlu.scenechangerjfx.StageManager;
 
 import java.util.HashMap;
 
