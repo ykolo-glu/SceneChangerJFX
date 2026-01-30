@@ -19,6 +19,8 @@ public class StageProvider {
      */
     public static StageManager getStageManager(String stageName){
 
+        System.out.println("Hello test 1");
+
         StageManager stageManager = getStageFromName(stageName);
         if(stageManager != null){
             if(stageName.equals("debug")){
