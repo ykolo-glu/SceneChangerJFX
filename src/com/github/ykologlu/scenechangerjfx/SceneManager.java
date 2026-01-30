@@ -76,6 +76,9 @@ public class SceneManager {
         boolean cachedSceneNotFound = false;
         if(useCachedScene){
             scene = getSceneFromFilepath(filepath);
+            System.out.println("Suche cached Scene für: " + filepath);
+            System.out.println("Gefundene Scene: " + scene);
+            System.out.println("Alle Scenes im Cache: " + getScenes().keySet());
             if(scene == null){
                 cachedSceneNotFound = true;
             }
