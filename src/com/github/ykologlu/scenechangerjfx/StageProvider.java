@@ -21,7 +21,13 @@ public class StageProvider {
 
         StageManager stageManager = getStageFromName(stageName);
         if(stageManager != null){
+            if(stageName.equals("debug")){
+                return new DebugStageManager();
+            }
             return stageManager;
+        }
+        if(stageName.equals("debug")){
+            return new DebugStageManager();
         }
 
         stageManager = new StageManager();
