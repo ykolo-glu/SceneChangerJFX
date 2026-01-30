@@ -72,7 +72,7 @@ public class SceneManager {
     public Scene loadScene(String filepath, boolean cacheLastUsedScene, boolean useCachedScene) throws IOException {
 
         Scene scene = null;
-
+        System.out.println("method loadScene called with: filepath = " + filepath + ", cacheLastUsedScene = " + cacheLastUsedScene + ", useCachedScene = " + useCachedScene + "");
         boolean cachedSceneNotFound = false;
         if(useCachedScene){
             scene = getSceneFromFilepath(filepath);
