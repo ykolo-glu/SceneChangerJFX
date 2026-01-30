@@ -1,7 +1,6 @@
-package com.github.ykologlu.scenechangerjfx;
+package main.java.com.github.ykologlu.scenechangerjfx;
 
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 
 import java.net.URL;

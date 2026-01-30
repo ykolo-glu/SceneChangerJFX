@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"m":"SceneChangerJFX","l":"com.github.ykologlu.scenechangerjfx"}];updateSearchResults();
+packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"m":"SceneChangerJFX","l":"main.java.scenechangerjfx"}];updateSearchResults();

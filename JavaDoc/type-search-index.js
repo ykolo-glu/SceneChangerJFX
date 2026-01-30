@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"com.github.ykologlu.scenechangerjfx","l":"SceneManager"},{"p":"com.github.ykologlu.scenechangerjfx","l":"StageManager"},{"p":"com.github.ykologlu.scenechangerjfx","l":"StageProvider"}];updateSearchResults();
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"main.java.scenechangerjfx","l":"SceneManager"},{"p":"main.java.scenechangerjfx","l":"StageManager"},{"p":"main.java.scenechangerjfx","l":"StageProvider"}];updateSearchResults();

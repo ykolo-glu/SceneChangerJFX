@@ -3,5 +3,6 @@ module SceneChangerJFX {
     requires javafx.graphics;
     requires javafx.controls;
 
-    exports com.github.ykologlu.scenechangerjfx;
+    exports main.java.scenechangerjfx;
+    exports main.java.scenechangerjfx.com.github.ykologlu;
 }

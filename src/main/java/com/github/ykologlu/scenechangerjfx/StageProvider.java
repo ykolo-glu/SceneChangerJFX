@@ -1,4 +1,4 @@
-package com.github.ykologlu.scenechangerjfx;
+package main.java.com.github.ykologlu.scenechangerjfx;
 
 import java.util.HashMap;
 
